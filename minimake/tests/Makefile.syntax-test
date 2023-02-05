@@ -1,0 +1,35 @@
+SIMPLE_VAR = heyo
+SIMPLE_VAR_COMMENT = the comment is gone # comment
+# the following line is only a tab
+	
+ 	SPACES_BEFORE_TAB =  	  var_beginning	var_end
+
+sparse_rule: depa depb
+
+	command 1
+
+	command 2
+
+ B 	 =  	  B_var_beginning	B_var_end
+
+packed_rule: depa depb
+	command 1
+	command 2
+
+silent_rule: depa depb
+	    @  command 1
+	@command 2
+
+rule_comment: depa depb # comment
+
+command_space_rule: depa depb
+	      echo spaces before
+	echo spaces after        
+	echo this is a # comment
+
+simple_rule: simple_dep
+
+no_dep_rule:
+
+variable_rule: beginning $(A) end
+	echo "shouldn't be expanded: $(A)"

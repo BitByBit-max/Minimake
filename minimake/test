@@ -1,0 +1,4 @@
+toto= A
+
+all:
+	@echo ${toto}
